@@ -14,7 +14,4 @@ from functools import reduce
 
 def mel_f()
 
-
-
-
 # 6
