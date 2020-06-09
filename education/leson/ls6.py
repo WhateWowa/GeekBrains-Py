@@ -11,7 +11,9 @@
 class Phone: #CamelStyle
     def __init__(self, model_phone):
         self.model = model_phone
+        self._id = 123456789
         self._loading()
+        self.__bla = 'qwe'
 
     def call(self):
         print('calling')
@@ -19,7 +21,12 @@ class Phone: #CamelStyle
     def _loading(self):
         print(self.model, 'loading...')
 
+    def get_id(self):
+        return self._id
+
 my_phone = Phone('nokia1100')
 my_phone.call()
-my_phone._loading()
+# my_phone._loading()
+print(my_phone.get_id())
+print(my_phone._Phone__bla) # name._classname__attr
 # print(my_phone.model)
