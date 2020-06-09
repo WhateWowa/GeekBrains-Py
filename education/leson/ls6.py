@@ -1,5 +1,3 @@
-# print('hello ls6')
-
 # def print_human_name(human):
 #     print(human['name'])
 # h1 = {'name': 'Marya'}
