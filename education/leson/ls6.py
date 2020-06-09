@@ -29,4 +29,5 @@ my_phone.call()
 # my_phone._loading()
 print(my_phone.get_id())
 print(my_phone._Phone__bla) # name._classname__attr
+# my_phone._loading()
 # print(my_phone.model)
