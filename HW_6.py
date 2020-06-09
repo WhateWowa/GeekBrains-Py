@@ -7,18 +7,44 @@
 # Задачу можно усложнить, реализовав проверку порядка режимов,
 # и при его нарушении выводить соответствующее сообщение и завершать скрипт.
 
+import time
+
 class TrafficLight:
 
-    def color(self):
-        print('color')
+    __color = ['red', 'yellow', 'green']
 
-    def 
+    def running(self, __color):
+        self.color = __color
+        for i in self.color:
+            if i = 'Red':
+            time.clock(7)
+        continue self.color is 'Yellow':
+            time.clock(2)
+        continue self.color is 'Green':
+            time.clock(10)
+        break:
+
+color = TrafficLight('blue')
+
+#     if "mode" in i:
+#         if i["mode"][0] == "red":
+#             offLights()
+#             G.output(light_r, True)
+#         elif i["mode"][0] == "yellow":
+#             offLights()
+#             G.output(light_y, True)
+#         elif i["mode"][0] == "green":
+#             offLights()
+#             G.output(light_g, True)
+#         elif i["mode"][0] == "off":
+#             offLights()
+
 
 # 2. Реализовать класс Road (дорога), в котором определить атрибуты: length (длина), width (ширина).
 # Значения данных атрибутов должны передаваться при создании экземпляра класса. Атрибуты сделать защищенными.
 # Определить метод расчета массы асфальта, необходимого для покрытия всего дорожного полотна. Использовать формулу:
 # длина * ширина * масса асфальта для покрытия одного кв метра дороги асфальтом,
-# толщиной в 1 см * чи сло см толщины полотна. Проверить работу метода.
+# толщиной в 1 см * числом толщины полотна. Проверить работу метода.
 # Например: 20м * 5000м * 25кг * 5см = 12500 т
 
 
