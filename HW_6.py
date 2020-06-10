@@ -95,7 +95,7 @@ class Position(Worker):
         print('Доход: ', )
 
 
-pos1 = Position('Ivan', 'Golunov', 'Spec', income)
+pos1 = Position('Ivan', 'Golunov', 'Spec')
 
 
 # 4. Реализуйте базовый класс Car. У данного класса должны быть следующие атрибуты:
