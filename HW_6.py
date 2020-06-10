@@ -73,6 +73,8 @@
 # Проверить работу примера на реальных данных (создать экземпляры класса Position, передать данные,
 # проверить значения атрибутов, вызвать методы экземпляров).
 
+
+
 dict()
 income1 = {"wage": 20000, "bonus": 5000}
 income2 = {"wage": 22000, "bonus": 3000}
@@ -92,10 +94,12 @@ class Position(Worker):
         print('ФИО: ', self.name, self.surname)
 
     def get_full_income(self):
-        print('Доход: ', )
-
+        inc = (int[x:[:x]])
+        print('Доход: ', inc)
 
 pos1 = Position('Ivan', 'Golunov', 'Spec')
+pos1.get_full_name()
+# pos1.get_full_income()
 
 
 # 4. Реализуйте базовый класс Car. У данного класса должны быть следующие атрибуты:
