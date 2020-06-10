@@ -4,8 +4,6 @@
 # третьего (зеленый) — на ваше усмотрение.
 # Переключение между режимами должно осуществляться только в указанном порядке (красный, желтый, зеленый).
 # Проверить работу примера, создав экземпляр и вызвав описанный метод.
-# Задачу можно усложнить, реализовав проверку порядка режимов,
-# и при его нарушении выводить соответствующее сообщение и завершать скрипт.
 
 from time import sleep
 from colorama import Fore
@@ -13,7 +11,6 @@ from colorama import Fore
 class TrafficLight:
     def __init__(self, color):
         self.__color = color
-        self.running()
 
     def running(self):
         while True:
@@ -41,8 +38,11 @@ class TrafficLight:
                         print(Fore.LIGHTBLUE_EX + 'Wrong Color!')
                         break
 
-start_color = TrafficLight('Blue')
+print(Fore.LIGHTMAGENTA_EX + 'Start 1st Task')
+start_color = TrafficLight('Red')
 print(Fore.RESET + "Start color: ", start_color._TrafficLight__color)
+start_color.running()
+print(Fore.RESET + 'Stop 1st Task')
 
 # 2. Реализовать класс Road (дорога), в котором определить атрибуты: length (длина), width (ширина).
 # Значения данных атрибутов должны передаваться при создании экземпляра класса. Атрибуты сделать защищенными.
@@ -53,17 +53,21 @@ print(Fore.RESET + "Start color: ", start_color._TrafficLight__color)
 
 class Road:
 
-    def __init__(self, length, width):
+    def __init__(self, width, length):
         self._length = length
         self._width = width
         self.mass = 25
         self.depth = 5
-        self.calculate()
 
     def calculate(self):
         print('Масса асфальта:', (self._length * self._width * self.mass * self.depth) / 1000, 'тонн')
 
-road = Road(10, 2000)
+print('Start 2nd Task')
+road = Road(20, 15000)
+print('Длина: ', road._length, 'метров')
+print('Ширина: ', road._width, 'метров')
+road.calculate()
+print('Stop 2nd Task')
 
 # 3. Реализовать базовый класс Worker (работник), в котором определить атрибуты:
 # name, surname, position (должность), income (доход). Последний атрибут должен быть защищенным и ссылаться на словарь,
@@ -86,9 +90,10 @@ class Worker:
         self.position = position
         x = dict['wage']
         y = dict['bonus']
+        self.wage = int(x)
+        self.bonus = int(y)
         self._income = int(x + y)
-        print('Имя: ', self.name, '\n', 'Фамилия: ', self.surname, '\n', 'Должность: ', self.position, '\n', 'Доход: ',
-              self._income)
+        print(' Имя: ', self.name, '\n', 'Фамилия: ', self.surname, '\n', 'Должность: ', self.position, '\n', 'ЗП: ', self.wage, '\n', 'Премия: ', self.bonus)
 
 class Position(Worker):
 
@@ -98,10 +103,11 @@ class Position(Worker):
     def get_full_income(self):
         print('Доход:', self._income)
 
+print('Start 3rd Task')
 pos1 = Position('Ivan', 'Golunov', 'Spec')
 pos1.get_full_name()
 pos1.get_full_income()
-
+print('Stop 3rd Task')
 # 4. Реализуйте базовый класс Car. У данного класса должны быть следующие атрибуты:
 # speed, color, name, is_police (булево). А также методы: go, stop, turn(direction), которые должны сообщать,
 # что машина поехала, остановилась, повернула (куда). Опишите несколько дочерних классов:
@@ -163,6 +169,7 @@ class PoliceCar(Car):
     def Police(self):
         print(self.name, self.is_police, 'say: Поймать всех нарушителей скоростного режима')
 
+print('Start 4th Task')
 workcar1 = WorkCar(70, 'Blue', 'Lada', 'Work')
 workcar1.go()
 workcar1.show_speed()
@@ -170,7 +177,7 @@ workcar1.turn()
 workcar1.stop()
 workcar2 = WorkCar(50, 'White', 'KIA', 'Work')
 workcar2.go()
-workcar2.WorkCar()
+workcar2.Work()
 workcar2.show_speed()
 workcar2.stop()
 towncar1 = TownCar(50, 'White', 'KIA', 'Town')
@@ -194,6 +201,7 @@ sportcar.go()
 sportcar.turn()
 sportcar.Sport()
 sportcar.show_speed()
+print('Stop 4th Task')
 
 # 5. Реализовать класс Stationery (канцелярская принадлежность). Определить в нем атрибут title (название)
 # и метод draw (отрисовка). Метод выводит сообщение “Запуск отрисовки.” Создать три дочерних класса Pen (ручка),
@@ -227,6 +235,7 @@ class Handle(Stationery):
         print(self.title)
         print('"Запуск отрисовки маркером"')
 
+print('Start 5th Task')
 palka = Stationery('palka')
 palka.draw()
 pen = Pen('Pen')
@@ -235,3 +244,4 @@ pencil = Pen('Pencil')
 pencil.draw()
 handle = Pen('Handle')
 handle.draw()
+print('Stop 5th Task')
