@@ -94,8 +94,11 @@ class Position(Worker):
         print('ФИО: ', self.name, self.surname)
 
     def get_full_income(self):
-        inc = (int[x:[:x]])
+
+        sum_inc = sum([int(x[x.find(':'):]) for x in splitted_line[1:] if '(' in x])
         print('Доход: ', inc)
+
+# sum_lessons = sum([int(x[:x.find('(')]) for x in splitted_line[1:] if '(' in x])
 
 pos1 = Position('Ivan', 'Golunov', 'Spec')
 pos1.get_full_name()
